@@ -71,17 +71,14 @@ def get_entities(sent):
                 prv_tok_dep = ""
                 prv_tok_text = ""
 
-            # Check if a token is the object.
-            if tok.dep_.find("obj") == True:
-                # If yes, then concatenate the modifier, prefix, and token
-                # and assign the result to the object variable (ent2).
-                ent2 = modifier + " " + prefix + " " + tok.text
+            ent2 = modifier + " " + prefix + " " + tok.text
 
             # Update the variable for the dependency tag for the previous token.
             prv_tok_dep = tok.dep_
+            print("Token Dep:" + tok.dep_)
             # Update the variable for the previous token in the sentence.
             prv_tok_text = tok.text
-        print(ent2)
+        # print(ent2)
     return [ent1.strip(), ent2.strip()]
 
 
@@ -107,6 +104,10 @@ def get_relation(sent):
             {'DEP': 'agent', 'OP': "?"},
             {'POS': 'ADJ', 'OP': "?"},
             {'POS': 'DET', 'OP': "?"},
+        ],
+        [
+            {'DEP': 'ROOT'},
+            {'POS': 'DET', 'OP': "?"},
         ]
     ]
 
@@ -120,14 +121,16 @@ def get_relation(sent):
     return(span.text)
 
 
-doc = nlp(textlist[0])
+doc = nlp(textlist[3])
 
 for tok in doc:
     print(tok.text, " ", tok.dep_)
 
-
 relations = [get_relation(i) for i in tqdm(textlist)]
+print("First\n")
 print(get_entities(textlist[0]))
+print("Second\n")
+print(get_entities(textlist[1]))
 df = pd.DataFrame({'source': subjects, 'edge': relations, 'target': objects})
 
 print(df)
@@ -135,5 +138,4 @@ print(df)
 print(objects)
 df.to_csv('Data.csv', index=False)
 
-print(os.system('python3 -m rdfizer -c ./config.ini'))
-
+# print(os.system('python3 -m rdfizer -c ./config.ini'))
