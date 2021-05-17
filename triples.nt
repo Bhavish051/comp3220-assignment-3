@@ -1,8 +1,8 @@
-<http://example.com/resource/Test.csv/Robert> <http://xmlns.com/foaf/0.1/name> "Robert".
-<http://example.com/resource/Test.csv/Robert> <http://xmlns.com/foaf/0.1/name> "Robert".
-<http://example.com/resource/Test.csv/Robert> <http://xmlns.com/foaf/0.1/name> "Robert".
-<http://example.com/resource/Test.csv/Robert> <http://xmlns.com/foaf/0.1/name> "Robert".
-<http://example.com/resource/Test.csv/Robert> <http://xmlns.com/foaf/0.1/name> "Robert".
-<http://example.com/resource/Test.csv/Robert> <http://xmlns.com/foaf/0.1/name> "Robert".
-<http://example.com/resource/Test.csv/Artificial%20Intelligence> <http://xmlns.com/foaf/0.1/name> "Artificial Intelligence".
-<http://example.com/resource/Test.csv/lecture> <http://xmlns.com/foaf/0.1/name> "lecture".
+<http://example.org/Robert> <http://xmlns.com/foaf/0.1/name> "person".
+<http://example.org/Robert> <http://xmlns.com/foaf/0.1/name> "Alice".
+<http://example.org/Robert> <http://xmlns.com/foaf/0.1/name> "1998/07/04".
+<http://example.org/Robert> <http://xmlns.com/foaf/0.1/name> "Sydney".
+<http://example.org/Robert> <http://xmlns.com/foaf/0.1/name> "Bob".
+<http://example.org/Robert> <http://xmlns.com/foaf/0.1/name> "Artificial Intelligence".
+<http://example.org/Artificial%20Intelligence> <http://xmlns.com/foaf/0.1/name> "John McCarthy".
+<http://example.org/lecture> <http://xmlns.com/foaf/0.1/name> "Artificial Intelligence".

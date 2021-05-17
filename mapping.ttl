@@ -17,11 +17,19 @@
     ];
 
     rr:subjectMap [ 
-        rr:template "http://example.com/resource/Test.csv/{source}" 
-        
+        rr:template "http://example.org/{source}" 
     ];
 
     rr:predicateObjectMap [
-        rr:predicate foaf:name ;
-        rr:objectMap [ rml:reference "source"]
-    ];.
+        rr:predicate foaf:name;
+        rr:objectMap [ 
+            rml:reference "target"
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate <http://example.com/ontology/knows>;
+        rr:objectMap [
+            a rr:RefObjectMap;
+        ]
+    ].

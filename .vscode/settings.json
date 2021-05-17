@@ -2,5 +2,6 @@
     "files.watcherExclude": {
         "**/target": true
     },
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "/usr/local/bin/python"
 }

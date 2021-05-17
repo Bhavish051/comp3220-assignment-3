@@ -46,10 +46,12 @@ def get_entities(sent):
             if tok.dep_ == "compound":
                 # If yes, then store the token in the prefix variable.
                 prefix = tok.text
+                print("Prefix at 49: " + prefix)
                 # Check if the previous token was also a compound one.
                 if prv_tok_dep == "compound":
                     # If yes, then update the prefix variable.
                     prefix = prv_tok_text + " " + tok.text
+                    print("Prefix at 54: " + prefix)
 
             # Check if a token is a modifier or not.
             if tok.dep_.endswith("mod") == True:
@@ -65,6 +67,8 @@ def get_entities(sent):
                 # If yes, then concatenate the modifier, prefix, and token
                 # and assign the result to the subject variable (ent1).
                 ent1 = modifier + " " + prefix + " " + tok.text
+                print("At line 68" + ent1)
+                print("At line 68 Prefix: " + prefix)
                 # Reset the following variables: prefix, modifier, prv_tok_dep, and prv_tok_text.
                 prefix = ""
                 modifier = ""
@@ -127,10 +131,12 @@ for tok in doc:
     print(tok.text, " ", tok.dep_)
 
 relations = [get_relation(i) for i in tqdm(textlist)]
-print("First\n")
-print(get_entities(textlist[0]))
+print("Six\n")
+print("Sentence Passed: " + textlist[6])
+print(get_entities(textlist[6]))
 print("Second\n")
-print(get_entities(textlist[1]))
+print("Sentence Passed: " + textlist[7])
+print(get_entities(textlist[7]))
 df = pd.DataFrame({'source': subjects, 'edge': relations, 'target': objects})
 
 print(df)
@@ -138,4 +144,4 @@ print(df)
 print(objects)
 df.to_csv('Data.csv', index=False)
 
-# print(os.system('python3 -m rdfizer -c ./config.ini'))
+print(os.system('python3 -m rdfizer -c ./config.ini'))
