@@ -1,9 +1,9 @@
 source,edge,target
 Robert,is a,person
-Robert,is a,Alice
+Robert,is a friend of,Alice
 Robert,born on,1998/07/04
 Robert,born in,Sydney
 Robert,known as,Bob
-Robert,is interested,Artificial Intelligence
+Robert,is interested in,Artificial Intelligence
 Artificial Intelligence,created by,John McCarthy
 lecture,is about,Artificial Intelligence

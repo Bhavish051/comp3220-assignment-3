@@ -79,7 +79,7 @@ def get_entities(sent):
 
             # Update the variable for the dependency tag for the previous token.
             prv_tok_dep = tok.dep_
-            print("Token Dep:" + tok.dep_)
+            # print("Token Dep:" + tok.dep_)
             # Update the variable for the previous token in the sentence.
             prv_tok_text = tok.text
         # print(ent2)
@@ -107,11 +107,27 @@ def get_relation(sent):
             {'DEP': 'prep', 'OP': "?"},
             {'DEP': 'agent', 'OP': "?"},
             {'POS': 'ADJ', 'OP': "?"},
-            {'POS': 'DET', 'OP': "?"},
         ],
         [
             {'DEP': 'ROOT'},
             {'POS': 'DET', 'OP': "?"},
+        ],
+        [
+            {'DEP': 'ROOT'},
+            {'POS': 'ADJ', "OP": "?"},
+            {"POS": "ADP", "OP": "?"}
+        ],
+        [
+            {'DEP': 'ROOT'},
+            {'DEP': 'prep', 'OP': "?"},
+            {'DEP': 'agent', 'OP': "?"},
+            {'POS': 'ADJ', 'OP': "?"}
+        ],
+        [
+            {'ORTH': 'is'},
+            {'ORTH': 'a'},
+            {"POS": "NOUN", "OP": "?"},
+            {"POS": "ADP", "OP": "+"}
         ]
     ]
 
@@ -124,18 +140,19 @@ def get_relation(sent):
 
     return(span.text)
 
+
 doc = nlp(textlist[3])
 
 for tok in doc:
     print(tok.text, " ", tok.dep_)
 
 relations = [get_relation(i) for i in tqdm(textlist)]
-print("Six\n")
-print("Sentence Passed: " + textlist[6])
-print(get_entities(textlist[6]))
-print("Second\n")
-print("Sentence Passed: " + textlist[7])
-print(get_entities(textlist[7]))
+# print("Six\n")
+# print("Sentence Passed: " + textlist[6])
+# print(get_entities(textlist[6]))
+# print("Second\n")
+# print("Sentence Passed: " + textlist[7])
+# print(get_entities(textlist[7]))
 df = pd.DataFrame({'source': subjects, 'edge': relations, 'target': objects})
 
 print(df)

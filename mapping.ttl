@@ -18,11 +18,10 @@
 
     rr:subjectMap [ 
         rr:template "http://example.org/{source}" 
-       
     ];
 
     rr:predicateObjectMap [
-        rr:predicate foaf:edge;
+        rr:predicate schema:target;
         rr:objectMap [ 
             rml:reference "target"
         ]

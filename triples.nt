@@ -1,8 +1,8 @@
-<http://example.org/Robert> <http://xmlns.com/foaf/0.1/edge> "person".
-<http://example.org/Robert> <http://xmlns.com/foaf/0.1/edge> "Alice".
-<http://example.org/Robert> <http://xmlns.com/foaf/0.1/edge> "1998/07/04".
-<http://example.org/Robert> <http://xmlns.com/foaf/0.1/edge> "Sydney".
-<http://example.org/Robert> <http://xmlns.com/foaf/0.1/edge> "Bob".
-<http://example.org/Robert> <http://xmlns.com/foaf/0.1/edge> "Artificial Intelligence".
-<http://example.org/Artificial%20Intelligence> <http://xmlns.com/foaf/0.1/edge> "John McCarthy".
-<http://example.org/lecture> <http://xmlns.com/foaf/0.1/edge> "Artificial Intelligence".
+<http://example.org/Robert> <http://schema.org/target> "person".
+<http://example.org/Robert> <http://schema.org/target> "Alice".
+<http://example.org/Robert> <http://schema.org/target> "1998/07/04".
+<http://example.org/Robert> <http://schema.org/target> "Sydney".
+<http://example.org/Robert> <http://schema.org/target> "Bob".
+<http://example.org/Robert> <http://schema.org/target> "Artificial Intelligence".
+<http://example.org/Artificial%20Intelligence> <http://schema.org/target> "John McCarthy".
+<http://example.org/lecture> <http://schema.org/target> "Artificial Intelligence".
