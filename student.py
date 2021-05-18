@@ -124,7 +124,6 @@ def get_relation(sent):
 
     return(span.text)
 
-
 doc = nlp(textlist[3])
 
 for tok in doc:
