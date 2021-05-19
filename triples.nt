@@ -1,2 +1,3 @@
-<http://example.org/Robert> <http://schema.org/name> "Robert".
-<http://example.org/Artificial%20Intelligence> <http://schema.org/name> "Artificial Intelligence".
+<http://example.org/Robert> <http://schema.org/birthDate> "4/7/98".
+<http://example.org/lecture%20%27Deep%20Learning%27> <http://schema.org/about> "Artificial Intelligence".
+<http://example.org/Robert> <http://schema.org/birthPlace> "Sydney".
