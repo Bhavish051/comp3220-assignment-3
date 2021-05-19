@@ -147,16 +147,11 @@ for tok in doc:
     print(tok.text, " ", tok.dep_)
 
 relations = [get_relation(i) for i in tqdm(textlist)]
-# print("Six\n")
-# print("Sentence Passed: " + textlist[6])
-# print(get_entities(textlist[6]))
-# print("Second\n")
-# print("Sentence Passed: " + textlist[7])
-# print(get_entities(textlist[7]))
+
 df = pd.DataFrame({'source': subjects, 'edge': relations, 'target': objects})
 
 print(df)
-# print(relations)
+
 print(objects)
 df.to_csv('Data.csv', index=False)
 
