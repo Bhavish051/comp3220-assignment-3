@@ -11,25 +11,19 @@
 
 <TriplesMap>
     a rr:TriplesMap;
-    rml:logicalSource [
-        rml:source "Data.csv";
+
+    rml:logicalSource[
+        rml:source "schema_name.csv";
         rml:referenceFormulation ql:CSV
     ];
 
-    rr:subjectMap [ 
-        rr:template "http://example.org/{source}" 
+    rr:subjectMap [
+        rr:template "http://example.org/{ID}"
     ];
-
-    rr:predicateObjectMap [
-        rr:predicate schema:target;
-        rr:objectMap [ 
+    
+    rr:predicateObjectMap[
+        rr:predicate schema:name;
+        rr:objectMap [
             rml:reference "target"
         ]
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate <http://example.com/ontology/knows>;
-        rr:objectMap [
-            a rr:RefObjectMap;
-        ]
-    ].
+    ];.

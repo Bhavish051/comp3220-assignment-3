@@ -1,0 +1,9 @@
+source,target,Secondary
+Robert,person,name
+Robert,Alice,type
+Robert,4/7/98,birthDate
+Robert,Sydney,birthPlace
+Robert,Bob,nick
+Robert,Artificial Intelligence,topic_interest
+Artificial Intelligence,John McCarthy,creator
+lecture 'deep learning',Artificial Intelligence,about

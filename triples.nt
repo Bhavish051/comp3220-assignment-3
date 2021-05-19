@@ -1,8 +1,2 @@
-<http://example.org/Robert> <http://schema.org/target> "person".
-<http://example.org/Robert> <http://schema.org/target> "Alice".
-<http://example.org/Robert> <http://schema.org/target> "1998/07/04".
-<http://example.org/Robert> <http://schema.org/target> "Sydney".
-<http://example.org/Robert> <http://schema.org/target> "Bob".
-<http://example.org/Robert> <http://schema.org/target> "Artificial Intelligence".
-<http://example.org/Artificial%20Intelligence> <http://schema.org/target> "John McCarthy".
-<http://example.org/lecture> <http://schema.org/target> "Artificial Intelligence".
+<http://example.org/Robert> <http://schema.org/name> "Robert".
+<http://example.org/Artificial%20Intelligence> <http://schema.org/name> "Artificial Intelligence".
