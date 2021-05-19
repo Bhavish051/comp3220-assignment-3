@@ -1,0 +1,34 @@
+<TriplesMap7>
+    a rr:TriplesMap;
+
+    rml:logicalSource[
+        rml:source "w3.csv";
+        rml:referenceFormulation ql:CSV;
+    ];
+
+    rr:subjectMap[
+        rr:template "http://xmlns.com/foaf/0.1/{edge}";
+    ];.
+
+      rr:parentTriplesMap <#TriplesMap7>;
+
+
+
+<TriplesMap6>
+    a rr:TriplesMap;
+
+    rml:logicalSource[
+        rml:source "xmlns.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    
+    rml:subjectMap[
+        rr:template "http://example.org/{edge}"
+    ];
+
+    rr:predicateObjectMap[
+        rr:predicate schema:edge;
+        rr:objectMap[
+          rml:reference "target"
+        ];
+    ].
