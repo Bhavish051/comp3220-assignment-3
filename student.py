@@ -171,3 +171,30 @@ print(Output)
 
 ## 
 
+res = Out.query(
+    """PREFIX ns1: <http://schema.org/> 
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        
+        SELECT ?who
+        WHERE { ?x ns1:name ?who .
+            ?x rdf:type ?y .
+            ?y rdfs:label "person" .
+        }
+    """
+)
+
+print(res.serialize(format="json").decode("utf-8"))
+
+res = Out.query(
+    """PREFIX ns1: <http://schema.org/> 
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        
+        SELECT ?who
+        WHERE { ?x ns1:name ?who .
+            ?x rdf: about ?y .
+            ?y rdfs: label "Artificial Intelligence" .
+            }
+    """
+)
+
+print(res.serialize(format="json").decode("utf-8"))
