@@ -119,6 +119,25 @@
     rr:predicateObjectMap[
         rr:predicate rdf:type;
         rr:objectMap [
-            rml:reference "target"
+           rr:parentTriplesMap <#TriplesMap7>;
+           rr:joinCondition[
+               rr:child "ID";
+               rr:parent "w3.ID";
+           ]
         ]
     ];.
+
+<TriplesMap7>
+    a rr:TriplesMap;
+    
+    rml:logicalSource[
+        [rml:souce "w3.csv";]
+        [rml:referenceFormulation ql:CSV]
+        [
+            rml:iterator "$.target[*]"
+            ]
+    ];
+    
+    rr:subjectMap[
+        rr:template "http://example.org/{ID}"
+    ].

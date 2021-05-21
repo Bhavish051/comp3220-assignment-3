@@ -67,8 +67,8 @@ def get_entities(sent):
                 # If yes, then concatenate the modifier, prefix, and token
                 # and assign the result to the subject variable (ent1).
                 ent1 = modifier + " " + prefix + " " + tok.text
-                print("At line 68" + ent1)
-                print("At line 68 Prefix: " + prefix)
+                # print("At line 68" + ent1)
+                # print("At line 68 Prefix: " + prefix)
                 # Reset the following variables: prefix, modifier, prv_tok_dep, and prv_tok_text.
                 prefix = ""
                 modifier = ""
@@ -150,9 +150,9 @@ relations = [get_relation(i) for i in tqdm(textlist)]
 
 df = pd.DataFrame({'source': subjects, 'edge': relations, 'target': objects})
 
-print(df)
+# print(df)
 
-print(objects)
-df.to_csv('Data.csv', index=False)
+# print(objects)
+# df.to_csv('Data.csv', index=False)
 
 print(os.system('python3 -m rdfizer -c ./config.ini'))
