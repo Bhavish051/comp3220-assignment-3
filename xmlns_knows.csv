@@ -1,2 +1,2 @@
-source,edge,target
-Robert,knows,Alice
+source,edge,target,ID
+Robert,knows,Alice,Robert

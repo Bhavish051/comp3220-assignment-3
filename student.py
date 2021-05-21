@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import spacy
+from spacy.language import FactoryMeta
 from spacy.matcher import Matcher
 from tqdm import tqdm
 import pandas as pd
@@ -46,12 +47,12 @@ def get_entities(sent):
             if tok.dep_ == "compound":
                 # If yes, then store the token in the prefix variable.
                 prefix = tok.text
-                print("Prefix at 49: " + prefix)
+                # print("Prefix at 49: " + prefix)
                 # Check if the previous token was also a compound one.
                 if prv_tok_dep == "compound":
                     # If yes, then update the prefix variable.
                     prefix = prv_tok_text + " " + tok.text
-                    print("Prefix at 54: " + prefix)
+                    # print("Prefix at 54: " + prefix)
 
             # Check if a token is a modifier or not.
             if tok.dep_.endswith("mod") == True:
@@ -156,3 +157,17 @@ df = pd.DataFrame({'source': subjects, 'edge': relations, 'target': objects})
 # df.to_csv('Data.csv', index=False)
 
 print(os.system('python3 -m rdfizer -c ./config.ini'))
+
+import rdflib
+
+Out = rdflib.Graph()
+
+res = Out.parse("triples.nt", format="ntriples")
+
+Output = res.serialize(format = 'turtle').decode("utf-8")
+
+print(Output)
+
+
+## 
+
