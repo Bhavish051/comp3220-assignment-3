@@ -176,7 +176,8 @@ res = Out.query(
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         
         SELECT ?who
-        WHERE { ?x ns1:name ?who .
+        WHERE { 
+            ?x ns1:name ?who .
             ?x rdf:type ?y .
             ?y rdfs:label "person" .
         }
@@ -190,10 +191,42 @@ res = Out.query(
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         
         SELECT ?who
-        WHERE { ?x ns1:name ?who .
-            ?x rdf: about ?y .
-            ?y rdfs: label "Artificial Intelligence" .
+        WHERE { 
+            ?x ns1:name ?who .
+            ?x rdfs:birthPlace ?y .
+            ?y rdfs:label "Sydney" .
             }
+    """
+)
+
+print(res.serialize(format="json").decode("utf-8"))
+
+
+res = Out.query(
+    """PREFIX ns1: <http://schema.org/> 
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+        
+        SELECT ?who
+        WHERE { 
+            ?x ns1:name ?who .
+            ?x xsd:nick ?y .
+            ?y rdfs:label "Bob" .
+        }
+    """
+)
+
+print(res.serialize(format="json").decode("utf-8"))
+
+res = Out.query(
+    """PREFIX ns1: <http://schema.org/> 
+        PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
+        
+        SELECT ?who
+        WHERE{
+            ?x ns1:name ?who .
+            ?x xsd:topic_interest ?y .
+            ?y rdfs:label "Artificial Intelligence" .
+        }
     """
 )
 
