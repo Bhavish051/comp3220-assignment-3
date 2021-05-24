@@ -6,28 +6,30 @@ from spacy.matcher import Matcher
 from tqdm import tqdm
 import pandas as pd
 import os
+import rdflib
 
+
+#the requests instance to capture the webpage from localhost:8080
 r = requests.get('http://localhost:8080/student.html', auth=('user', 'pass'))
 
-
+#This loop captures all the text from the webpage and saves it into a list using Beautiful soup library
 with open('/Users/bhavish051/Desktop/comp3220-assignment-3/student.html', 'r') as f:
     contents = f.read()
     soup = BeautifulSoup(contents, 'html.parser')
 
+# the list to store all the text on the page
 textlist = []
 
 for para_tag in soup.find_all('p'):
     Text = para_tag.decode_contents()
-    # print(Text)
     textlist.append(Text)
 
+#This load the pre-trained spacy model into the program
 nlp = spacy.load('en_core_web_sm')
-
-# print(textlist)
 
 ent_pairs = []
 
-
+#The method to extract the subject and the object.
 def get_entities(sent):
     ent1 = ""           # Variable for storing the subject.
     ent2 = ""           # Variable for storing the object.
@@ -93,7 +95,7 @@ for e in tqdm(textlist):
 subjects = [i[0] for i in ent_pairs]
 objects = [i[1] for i in ent_pairs]
 
-
+#The method to get the edge of the graph
 def get_relation(sent):
 
     doc = nlp(sent)
@@ -141,36 +143,20 @@ def get_relation(sent):
 
     return(span.text)
 
-
-doc = nlp(textlist[3])
-
-for tok in doc:
-    print(tok.text, " ", tok.dep_)
-
 relations = [get_relation(i) for i in tqdm(textlist)]
 
 df = pd.DataFrame({'source': subjects, 'edge': relations, 'target': objects})
 
-# print(df)
-
-# print(objects)
-# df.to_csv('Data.csv', index=False)
-
 print(os.system('python3 -m rdfizer -c ./config.ini'))
 
-import rdflib
-
+#The rdf library to read the triples.nt file 
 Out = rdflib.Graph()
-
 res = Out.parse("triples.nt", format="ntriples")
 
 Output = res.serialize(format = 'turtle').decode("utf-8")
-
 print(Output)
 
-
-## 
-
+#The SPARQL query to get the name of object in the graph whose type is person
 res = Out.query(
     """PREFIX ns1: <http://schema.org/> 
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -186,6 +172,7 @@ res = Out.query(
 
 print(res.serialize(format="json").decode("utf-8"))
 
+#The SPARQL query to get the name of object in the graph whose birthPlace is Sydney
 res = Out.query(
     """PREFIX ns1: <http://schema.org/> 
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -201,7 +188,7 @@ res = Out.query(
 
 print(res.serialize(format="json").decode("utf-8"))
 
-
+#The SPARQL query to get the name of object in the graph whose nickname is Bob
 res = Out.query(
     """PREFIX ns1: <http://schema.org/> 
         PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -217,6 +204,7 @@ res = Out.query(
 
 print(res.serialize(format="json").decode("utf-8"))
 
+#The SPARQL query to get the name of object in the graph whose topic of interest is Artificial Intelligence
 res = Out.query(
     """PREFIX ns1: <http://schema.org/> 
         PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
