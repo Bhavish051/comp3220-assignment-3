@@ -54,7 +54,7 @@ def get_entities(sent):
                 if prv_tok_dep == "compound":
                     # If yes, then update the prefix variable.
                     prefix = prv_tok_text + " " + tok.text
-                    # print("Prefix at 54: " + prefix)
+                    
 
             # Check if a token is a modifier or not.
             if tok.dep_.endswith("mod") == True:
@@ -70,8 +70,6 @@ def get_entities(sent):
                 # If yes, then concatenate the modifier, prefix, and token
                 # and assign the result to the subject variable (ent1).
                 ent1 = modifier + " " + prefix + " " + tok.text
-                # print("At line 68" + ent1)
-                # print("At line 68 Prefix: " + prefix)
                 # Reset the following variables: prefix, modifier, prv_tok_dep, and prv_tok_text.
                 prefix = ""
                 modifier = ""
@@ -146,6 +144,8 @@ def get_relation(sent):
 relations = [get_relation(i) for i in tqdm(textlist)]
 
 df = pd.DataFrame({'source': subjects, 'edge': relations, 'target': objects})
+
+print(df)
 
 print(os.system('python3 -m rdfizer -c ./config.ini'))
 

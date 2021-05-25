@@ -43,7 +43,7 @@
     rr:predicateObjectMap[
         rr:predicate schema:about;
         rr:objectMap [
-            rml:reference "target"
+            rr:template "http://example.org/{target}"
         ]
     ];.
 
@@ -62,7 +62,7 @@
     rr:predicateObjectMap[
         rr:predicate schema:creator;
         rr:objectMap [
-            rml:reference "target"
+            rr:template "http://example.org/{target}"
         ]
     ];.
 
@@ -81,7 +81,7 @@
     rr:predicateObjectMap[
         rr:predicate schema:birthDate;
         rr:objectMap [
-            rml:reference "target"
+            rr:template "http://www.w3.org/2001/{target}"
         ]
     ];.
 
@@ -173,9 +173,9 @@
     ];
     
     rr:predicateObjectMap[
-        rr:predicate schema:type;
+        rr:predicate rdf:type;
         rr:objectMap [
-            rml:reference "target"
+            rr:template "http://xmlns.com/foaf/0.1/{target}"
         ]
     ];.
     
@@ -192,13 +192,13 @@
     ];
     
     rr:predicateObjectMap[
-        rr:predicate schema:knows;
+        rr:predicate foaf:knows;
         rr:objectMap [
-            rml:reference "target"
+            rr:template "http://example.org/{target}"
         ]
     ];.
 
-    <TriplesMap8>
+    <TriplesMap9>
     a rr:TriplesMap;
 
     rml:logicalSource[
@@ -211,8 +211,8 @@
     ];
     
     rr:predicateObjectMap[
-        rr:predicate schema:topic_interest;
+        rr:predicate foaf:topic_interest;
         rr:objectMap [
-            rml:reference "target"
+            rr:template "http://example.org/{target}"
         ]
     ];.

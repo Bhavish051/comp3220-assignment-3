@@ -1,16 +1,10 @@
-<http://example.org/%20Robert> <http://schema.org/type> "person".
 <http://example.org/Robert> <http://schema.org/name> "Robert".
 <http://example.org/Artificial%20Intelligence> <http://schema.org/name> "Artificial Intelligence".
+<http://example.org/%20Robert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/person>.
+<http://example.org/Robert> <http://xmlns.com/foaf/0.1/topic_interest> <http://example.org/Artificial%20Intelligence>.
 <http://example.org/Robert> <http://schema.org/birthPlace> "Sydney".
-<http://example.org/lecture%20%27Deep%20Learning%27> <http://schema.org/about> "Artificial Intelligence".
+<http://example.org/Artificial%20Intelligence> <http://schema.org/creator> <http://example.org/John%20McCarthy>.
+<http://example.org/Robert> <http://xmlns.com/foaf/0.1/knows> <http://example.org/Alice>.
 <http://example.org/Robert> <http://schema.org/nick> "Bob".
-<http://example.org/Robert> <http://schema.org/birthDate> "4/7/98".
-<http://example.org/Robert> <http://schema.org/knows> "Artificial Intelligence".
-<http://example.org/Robert> <http://schema.org/topic_interest> "Artificial Intelligence".
-<http://example.org/Robert> <http://schema.org/knows> "Artificial Intelligence".
-<http://example.org/Robert> <http://schema.org/topic_interest> "Artificial Intelligence".
-<http://example.org/Robert> <http://schema.org/knows> "Artificial Intelligence".
-<http://example.org/Robert> <http://schema.org/topic_interest> "Artificial Intelligence".
-<http://example.org/Robert> <http://schema.org/knows> "Artificial Intelligence".
-<http://example.org/Robert> <http://schema.org/topic_interest> "Artificial Intelligence".
-<http://example.org/Artificial%20Intelligence> <http://schema.org/creator> "John McCarthy".
+<http://example.org/lecture%20%27Deep%20Learning%27> <http://schema.org/about> <http://example.org/Artificial%20Intelligence>.
+<http://example.org/Robert> <http://schema.org/birthDate> <http://www.w3.org/2001/4/7/98>.
