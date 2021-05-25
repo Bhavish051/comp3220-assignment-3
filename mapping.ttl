@@ -105,21 +105,6 @@
         ]
     ];.
 
-
-# <TriplesMap7>
-#     a rr:TriplesMap;
-    
-#     rml:logicalSource[
-#         [rml:souce "w3.csv";]
-#         [rml:referenceFormulation ql:CSV]
-#         [
-#             rml:iterator "$.target[*]"
-#             ]
-#     ];
-    
-#     rr:subjectMap[
-#         rr:template "http://example.org/{ID}"
-#     ].
 <TriplesMap6>
     a rr:TriplesMap;
 
@@ -138,29 +123,7 @@
             rml:reference "target"
         ]
     ];.
-    # <TriplesMap7>
-    # a rr:TriplesMap;
 
-    # rml:logicalSource[
-    #     rml:source "w3.csv";
-    #     rml:referenceFormulation ql:CSV
-    # ];
-
-    # rr:subjectMap [
-    #     rr:template "http://example.org/{ID}"
-    # ];
-    
-    # rr:predicateObjectMap[
-    #     rr:predicate rdf:type;
-    #     rr:objectMap [
-    #     #    rr:parentTriplesMap <#TriplesMap7>;
-    #     #    rr:joinCondition[
-    #     #        rr:child "ID";
-    #     #        rr:parent "w3.ID";
-    #         rml:reference "target"
-    #        ]
-    #     ]
-    # ];.
 <TriplesMap7>
     a rr:TriplesMap;
 

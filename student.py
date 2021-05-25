@@ -49,7 +49,6 @@ def get_entities(sent):
             if tok.dep_ == "compound":
                 # If yes, then store the token in the prefix variable.
                 prefix = tok.text
-                # print("Prefix at 49: " + prefix)
                 # Check if the previous token was also a compound one.
                 if prv_tok_dep == "compound":
                     # If yes, then update the prefix variable.
@@ -204,7 +203,7 @@ res = Out.query(
 
 print(res.serialize(format="json").decode("utf-8"))
 
-#The SPARQL query to get the name of object in the graph whose topic of interest is Artificial Intelligence
+#The SPARQL query to get the name of object in the graph whose topic of iterest is Artificinal Intelligence 
 res = Out.query(
     """PREFIX ns1: <http://schema.org/> 
         PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
