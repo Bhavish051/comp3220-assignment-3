@@ -77,11 +77,12 @@
     rr:subjectMap [
         rr:template "http://example.org/{ID}"
     ];
-    
+;
     rr:predicateObjectMap[
         rr:predicate schema:birthDate;
         rr:objectMap [
-            rr:template "http://www.w3.org/2001/{target}"
+            rr:template "http://www.w3.org/2001/{target}";  
+            rr:datatype xsd:Date;
         ]
     ];.
 
